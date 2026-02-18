@@ -16,7 +16,9 @@
             <input type="email" id="email" name="email" required><br><br>
 
             <label for="color">Your Favorite Color:</label>
-            <input type="color" id="color" name="color" required><br><br>
+            <input type="color" id="color" name="color" required>
+            <div id="colorPreview" class="color-preview"></div>
+            <br><br>
 
             <label for="profession">Your Profession:</label>
         <select  id="profession" name="profession">
@@ -36,9 +38,32 @@
             <label><input type="radio" name="level" value="beginner"> Beginner</label>
             <label><input type="radio" name="level" value="advanced"> Advanced</label>
 
+
+            <button type="button" id="surpriseBtn" class="funny-button small-button">
+            🎁 Click Me!
+            </button>
+
+            <div id="surpriseMessage" style="display:none; margin-top:20px; font-size:1.5rem;">
+                🦄 Surprise! You unlocked fun mode!
+            </div>
                 <button type="submit" class="funny-button">🚀 Let's Go!</button>
 
-        </form>
 
+            <script>
+                const surpriseBtn = document.getElementById("surpriseBtn");
+                const surpriseMessage = document.getElementById("surpriseMessage");
+
+                surpriseBtn.addEventListener("click", function() {
+                    surpriseMessage.style.display = "block";
+                });
+
+                const colorInput = document.getElementById("color");
+                const preview = document.getElementById("colorPreview");
+
+                colorInput.addEventListener("input", function() {
+                    preview.style.backgroundColor = colorInput.value;
+                });
+            </script>
+        </form>
 </body>
 </html>

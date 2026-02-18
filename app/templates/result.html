@@ -11,7 +11,7 @@
     <p>We have sent a confirmation to <strong>{{ email }}</strong>.</p>
     <p>We don't forget your favorite color is <span style="color: {{ color }}">{{ color }}</span>..</p>
     <p>Your profession: {{ profession }} that's cool.</p>
-    <p>Your hobbies are: {{hobbies}}</p>
+    <p>Your hobbies are: {{ hobbies | join(', ') }}</p>
     <p>Your Level is {{ level }} it`s great! </p>
     <a href="/">Go back to form</a>
 </body>
